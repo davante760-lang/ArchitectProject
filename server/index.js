@@ -5,6 +5,7 @@ const http = require('http');
 const WebSocket = require('ws');
 const config = require('./config');
 const dashboardRoutes = require('./routes/dashboard');
+const checklistRoutes = require('./routes/checklist');
 const healthRoutes = require('./routes/health');
 const projectRoutes = require('./routes/projects');
 const meetingRoutes = require('./routes/meetings');
@@ -31,6 +32,7 @@ app.set('wss', wss);
 
 // Routes
 app.use('/', dashboardRoutes);
+app.use('/checklist', checklistRoutes);
 app.use('/api/health', healthRoutes);
 app.use('/api/projects', projectRoutes);
 app.use('/api/meetings', meetingRoutes);
